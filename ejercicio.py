@@ -1,4 +1,5 @@
 import pandas as pd
+import math
 list1=[0,1,2,3,4,5]
 list2=[40,96,133,145,99,40]
 
@@ -10,11 +11,15 @@ observaciones=dataframe["cantidad_votantes(Ni)"].sum()
 media=x/observaciones
 dataframe["Ni*(Xi-media)^2"] = dataframe["cantidad_votantes(Ni)"] * ((dataframe["opinion(Xi)"] - media)*(dataframe["opinion(Xi)"] - media))
 varianza=dataframe["Ni*(Xi-media)^2"].sum()/observaciones
+desviacion_tipica=math.sqrt(varianza)
 print(dataframe)
+a=media-2*desviacion_tipica
+b=media+2*desviacion_tipica
 
-dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=4]
-dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=0]
+dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=b]
+dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=a]
 z=dataframe2["cantidad_votantes(Ni)"].sum()
 probabilidad=(z/observaciones)*100
 print(dataframe2)
+print(a,b)
 print(probabilidad)
