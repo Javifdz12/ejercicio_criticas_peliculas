@@ -21,5 +21,5 @@ dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=a]
 z=dataframe2["cantidad_votantes(Ni)"].sum()
 probabilidad=(z/observaciones)*100
 print(dataframe2)
-print(a,b)
+print(f"[{a},{b}]")
 print(probabilidad)
