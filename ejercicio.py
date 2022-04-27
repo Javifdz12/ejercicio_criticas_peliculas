@@ -12,4 +12,9 @@ dataframe["Ni*(Xi-media)^2"] = dataframe["cantidad_votantes(Ni)"] * ((dataframe[
 varianza=dataframe["Ni*(Xi-media)^2"].sum()/observaciones
 print(dataframe)
 
-dataframe.loc[2<dataframe["cantidad_votantes(Ni)"]<4]
+dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=5]
+dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=1]
+z=dataframe2["cantidad_votantes(Ni)"].sum()
+probabilidad=(z/observaciones)*100
+print(dataframe2)
+print(probabilidad)
