@@ -13,9 +13,9 @@ dataframe["Ni*(Xi-media)^2"] = dataframe["cantidad_votantes(Ni)"] * ((dataframe[
 varianza=dataframe["Ni*(Xi-media)^2"].sum()/observaciones
 desviacion_tipica=math.sqrt(varianza)
 print(dataframe)
-a=media-(2*desviacion_tipica)
-b=media+(2*desviacion_tipica)
 
+a=media-(3*desviacion_tipica)
+b=media+(3*desviacion_tipica)
 dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=3]
 dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=1]
 z=dataframe2["cantidad_votantes(Ni)"].sum()
@@ -23,3 +23,5 @@ probabilidad=(z/observaciones)*100
 print(dataframe2)
 print(f"[{a},{b}]")
 print(probabilidad)
+
+# en [1,3] estan el 67.63% de las observaciones, en [-0.18,5.21] y [-1.53,6.56] estan evidentemente el 100% de las observaciones
