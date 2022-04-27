@@ -16,8 +16,8 @@ print(dataframe)
 a=media-(2*desviacion_tipica)
 b=media+(2*desviacion_tipica)
 
-dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=b]
-dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=a]
+dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=3]
+dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=1]
 z=dataframe2["cantidad_votantes(Ni)"].sum()
 probabilidad=(z/observaciones)*100
 print(dataframe2)
