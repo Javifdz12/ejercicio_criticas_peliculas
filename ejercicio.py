@@ -13,8 +13,8 @@ dataframe["Ni*(Xi-media)^2"] = dataframe["cantidad_votantes(Ni)"] * ((dataframe[
 varianza=dataframe["Ni*(Xi-media)^2"].sum()/observaciones
 desviacion_tipica=math.sqrt(varianza)
 print(dataframe)
-a=media-2*desviacion_tipica
-b=media+2*desviacion_tipica
+a=media-(2*desviacion_tipica)
+b=media+(2*desviacion_tipica)
 
 dataframe2=dataframe.loc[dataframe["opinion(Xi)"]<=b]
 dataframe2=dataframe2.loc[dataframe["opinion(Xi)"]>=a]
