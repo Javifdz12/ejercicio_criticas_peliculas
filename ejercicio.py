@@ -1,5 +1,7 @@
 import pandas as pd
 import math
+import seaborn as sns
+import matplotlib.pyplot as plt
 list1=[0,1,2,3,4,5]
 list2=[40,96,133,145,99,40]
 
@@ -13,6 +15,8 @@ dataframe["Ni*(Xi-media)^2"] = dataframe["cantidad_votantes(Ni)"] * ((dataframe[
 varianza=dataframe["Ni*(Xi-media)^2"].sum()/observaciones
 desviacion_tipica=math.sqrt(varianza)
 print(dataframe)
+sns.histplot(x="opinion(Xi)",y="cantidad_votantes(Ni)",data=dataframe)
+plt.show()
 
 a=media-(3*desviacion_tipica)
 b=media+(3*desviacion_tipica)
