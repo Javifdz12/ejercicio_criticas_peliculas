@@ -15,7 +15,7 @@ dataframe["Ni*(Xi-media)^2"] = dataframe["cantidad_votantes(Ni)"] * ((dataframe[
 varianza=dataframe["Ni*(Xi-media)^2"].sum()/observaciones
 desviacion_tipica=math.sqrt(varianza)
 print(dataframe)
-sns.histplot(x="opinion(Xi)",y="cantidad_votantes(Ni)",data=dataframe)
+dataframe.plot(x="opinion(Xi)",y="cantidad_votantes(Ni)")
 plt.show()
 
 a=media-(3*desviacion_tipica)
